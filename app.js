@@ -15,10 +15,15 @@ CONNECTION.connect((connectionError) => {
   console.log('CONNECTION ESTABLISHED ************************* ========================== *********************** ');
 });
 
-const query = 'SELECT RTC_T FROM GroundNode WHERE CHAR_LENGTH(RTC_T) > 19';
-CONNECTION.query(query, (queryError, result, fields) => {
-  if (queryError) {
-    throw queryError;
-  }
-  console.log(result);
-});
+
+const queryTable = async (table) => {
+  const query = `SELECT RTC_T FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
+  await CONNECTION.query(query, (queryError, result, fields) => {
+    if (queryError) {
+      throw queryError;
+    }
+    console.log(result);
+  });
+};
+
+queryTable('GroundNode');
