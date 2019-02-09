@@ -17,14 +17,13 @@ CONNECTION.connect((connectionError) => {
 
 
 const queryTable = async (table) => {
-  const query = `SELECT RTC_T FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
+  const query = `SELECT RTC_T,id FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
   await CONNECTION.query(query, (queryError, result, fields) => {
     if (queryError) {
       throw queryError;
     }
     result.map((rtcField) => {
-      // console.log(rtcField.RTC_T);
-      console.log(rtcField.RTC_T.slice(-19));
+      console.log(`${rtcField.id} === ${rtcField.RTC_T.slice(-19)}`);
       return undefined;
     });
   });
