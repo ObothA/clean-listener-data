@@ -24,7 +24,7 @@ const queryTable = async (table) => {
     }
     result.map((rtcField) => {
       // console.log(rtcField.RTC_T);
-      console.log(rtcField.RTC_T.split('').reverse().join('').substring(0, 18));
+      console.log(rtcField.RTC_T.slice(-18));
       return undefined;
     });
   });
