@@ -23,7 +23,8 @@ const queryTable = async (table) => {
       throw queryError;
     }
     result.map((rtcField) => {
-      console.log(rtcField.RTC_T);
+      // console.log(rtcField.RTC_T);
+      console.log(rtcField.split('').reverse().join('').substring(0, 18));
       return undefined;
     });
   });
