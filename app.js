@@ -22,7 +22,10 @@ const queryTable = async (table) => {
     if (queryError) {
       throw queryError;
     }
-    console.log(result);
+    result.map((rtcField) => {
+      console.log(rtcField);
+      return undefined;
+    });
   });
 };
 
