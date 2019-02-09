@@ -23,7 +23,7 @@ const queryTable = async (table) => {
       throw queryError;
     }
     result.map((rtcField) => {
-      console.log(rtcField);
+      console.log(rtcField.RTC_T);
       return undefined;
     });
   });
