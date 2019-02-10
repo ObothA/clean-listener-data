@@ -18,6 +18,8 @@ CONNECTION.connect((connectionError) => {
 
 const queryTable = async (table) => {
   const query = `SELECT RTC_T,id FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
+  console.log('starting the cleaning process');
+
   await CONNECTION.query(query, (queryError, result, fields) => {
     if (queryError) {
       throw queryError;
@@ -27,6 +29,8 @@ const queryTable = async (table) => {
       return undefined;
     });
   });
+
+  console.log('############ done cleaning');
 };
 
 queryTable('GroundNode');
