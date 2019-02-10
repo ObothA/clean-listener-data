@@ -18,7 +18,7 @@ CONNECTION.connect((connectionError) => {
 });
 
 
-export default async function queryTable(table) {
+async function queryTable(table) {
   const query = `SELECT RTC_T,id FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
   console.log(`starting to clean ${table}`);
 
