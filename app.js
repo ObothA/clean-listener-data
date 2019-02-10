@@ -31,7 +31,7 @@ const queryTable = async (table) => {
       const { id } = rtcField;
       const RTC_T = rtcField.RTC_T.slice(-19);
 
-      const updateQuery = `UPDATE ${table} SET RTC_T = ${RTC_T} WHERE id = ${id}`;
+      const updateQuery = `UPDATE ${table} SET RTC_T = '${RTC_T}' WHERE id = ${id}`;
 
       await CONNECTION.query(updateQuery, (updateError, result, fields) => { 
         if (updateError) {
