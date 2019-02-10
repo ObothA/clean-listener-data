@@ -18,6 +18,7 @@ CONNECTION.connect((connectionError) => {
   console.log('CONNECTION ESTABLISHED ************************* ========================== *********************** ');
 });
 
-queryTable('GroundNode');
-
-export default { CONNECTION };
+queryTable('GroundNode', CONNECTION);
+queryTable('SinkNode', CONNECTION);
+queryTable('TenMeterNode', CONNECTION);
+queryTable('TwoMeterNode', CONNECTION);

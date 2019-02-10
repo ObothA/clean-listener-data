@@ -1,6 +1,6 @@
 
 
-const queryTable = async (table) => {
+const queryTable = async (table, CONNECTION) => {
   const query = `SELECT RTC_T,id FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
   console.log(`starting to clean ${table}`);
 
@@ -9,7 +9,6 @@ const queryTable = async (table) => {
       throw queryError;
     }
     result.map(async (rtcField) => {
-      // console.log(`${rtcField.id} === ${rtcField.RTC_T.slice(-19)}`);
       console.log(`cleaning ${table} data ....`);
       const { id } = rtcField;
       const RTC_T = rtcField.RTC_T.slice(-19);
