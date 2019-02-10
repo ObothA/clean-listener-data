@@ -53,3 +53,6 @@ queryTable('GroundNode');
 queryTable('SinkNode');
 queryTable('TenMeterNode');
 queryTable('TwoMeterNode');
+
+console.log('');
+console.log('Everything clean now ********************************************');
