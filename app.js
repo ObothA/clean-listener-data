@@ -28,9 +28,9 @@ const queryTable = async (table) => {
       console.log(`${rtcField.id} === ${rtcField.RTC_T.slice(-19)}`);
       return undefined;
     });
-  });
 
-  console.log('############ done cleaning');
+    console.log('############ done cleaning');
+  });
 };
 
 queryTable('GroundNode');
