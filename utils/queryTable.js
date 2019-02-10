@@ -1,6 +1,6 @@
 
 
-const queryTable = async (table, CONNECTION) => {
+async function queryTable(table, CONNECTION) => {
   const query = `SELECT RTC_T,id FROM ${table} WHERE CHAR_LENGTH(RTC_T) > 19`;
   console.log(`starting to clean ${table}`);
 
